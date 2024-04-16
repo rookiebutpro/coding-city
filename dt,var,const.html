@@ -1,0 +1,168 @@
+<html>
+<head>
+
+ <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: ; 
+        }
+
+        .sections {
+            display: flex; 
+            flex-basis: 500px;
+        }
+		
+		body{
+	min-height:50vh;
+	min-width:100vh;
+	background:url("https://wallpapercave.com/wp/wp12455606.jpg") no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+
+        section {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #section1 {
+            /* flex-grow: ; */
+            background-color: #4d93a8;
+        }
+
+        #iframe-container {
+            width: 30%; 
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        iframe {
+            width: 100%; 
+            height: 100%; 
+        }
+
+        #section2 {
+            text-align: center;
+            font-size: 21px;
+            width: 10%;
+            border: none;
+            background-color:#4d93a8;
+            margin: 0;
+            float: left;
+            padding: 0%;
+            padding-top: 30px;
+        }
+        #section3 {
+            display: flex;
+            flex-basis: 700px;
+            flex-grow: 1; 
+            border: none; 
+            margin: 0;}
+        .main_hed{
+            background-color: #4d93a8;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .popup-list {
+          
+            position: relative;
+            display: inline-block;
+            background-color: #4d93a8;
+            padding-bottom: 5px;
+        }
+
+        .popup-list-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .popup-list-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup-list:hover .popup-list-content {
+            display: block;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline solid;
+            font-size: 40px;
+            background-color: #4d93a8;
+            color: #f9f9f9;
+        }
+        .plc{
+            border-width: 3px;
+            background-color:rgb(53, 141, 182);
+            text-align: left;
+            
+        }
+    </style>
+</head>
+<title>Data Types,Variables and Constants</title>
+<body>
+<big>
+<h1><u>Data Types,Variables and Constants</h1></u>
+<p>
+A variable is a meaningful name which facilitates a programmer to store data temporarily during the execution of code. It helps you to manipulate data in PL/SQL programs. It is nothing except a name given to a storage area. Each variable in the PL/SQL has a specific data type which defines the size and layout of the variable's memory.
+</p>
+Syntax for declaring variable:
+<pre>variable_name [CONSTANT] datatype [NOT NULL] [:= | DEFAULT initial_value]</pre>
+
+<h2>Initializing Variables in PL/SQL</h2>
+<p>
+Evertime you declare a variable, PL/SQL defines a default value NULL to it. If you want to initialize a variable with other value than NULL value, you can do so during the declaration, by using this method:-
+</p>
+<h2>The DEFAULT keyword</h2>
+<pre>
+counter   BINARY_INTEGER := 0;
+priority  VARCHAR2(8)    DEFAULT 'LOW';
+</pre>
+<h2>PL/SQL Constants</h2>
+<p>
+A constant is a value used in a PL/SQL block that remains unchanged throughout the program. It is a user-defined literal value. It can be declared and used instead of actual values.
+</p>
+Syntax to declare a constant:
+<pre>
+constant_name CONSTANT datatype := VALUE;
+</pre>
+<p>
+Constant_name:it is the name of constant just like variable name. The constant word is a reserved word and its value does not change.
+VALUE: it is a value which is assigned to a constant when it is declared. It can not be assigned later.
+</p>
+<pre>
+DECLARE  
+   -- constant declaration  
+   pi constant number := 3.141592654;  
+   -- other declarations  
+   radius number(5,2);   
+   dia number(5,2);   
+   circumference number(7, 2);  
+   area number (10, 2);  
+BEGIN   
+   -- processing  
+   radius := 9.5;   
+   dia := radius * 2;   
+   circumference := 2.0 * pi * radius;  
+   area := pi * radius * radius;  
+   -- output  
+   dbms_output.put_line('Radius: ' || radius);  
+   dbms_output.put_line('Diameter: ' || dia);  
+   dbms_output.put_line('Circumference: ' || circumference);  
+   dbms_output.put_line('Area: ' || area);  
+END;  
+/  
+</pre>
+</big>
+</body>
+</html>

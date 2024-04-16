@@ -1,0 +1,257 @@
+<html>
+<head>
+<style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: ; 
+        }
+
+        .sections {
+            display: flex; 
+            flex-basis: 500px;
+        }
+		
+		body{
+	min-height:50vh;
+	min-width:100vh;
+	background:url("https://wallpapercave.com/wp/wp11119704.jpg") no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+
+        section {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #section1 {
+            /* flex-grow: ; */
+            background-color: #4d93a8;
+        }
+
+        #iframe-container {
+            width: 30%; 
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        iframe {
+            width: 100%; 
+            height: 100%; 
+        }
+
+        #section2 {
+            text-align: center;
+            font-size: 21px;
+            width: 10%;
+            border: none;
+            background-color:#4d93a8;
+            margin: 0;
+            float: left;
+            padding: 0%;
+            padding-top: 30px;
+        }
+        #section3 {
+            display: flex;
+            flex-basis: 700px;
+            flex-grow: 1; 
+            border: none; 
+            margin: 0;}
+        .main_hed{
+            background-color: #4d93a8;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .popup-list {
+          
+            position: relative;
+            display: inline-block;
+            background-color: #4d93a8;
+            padding-bottom: 5px;
+        }
+
+        .popup-list-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .popup-list-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup-list:hover .popup-list-content {
+            display: block;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline solid;
+            font-size: 40px;
+            background-color: #4d93a8;
+            color: #f9f9f9;
+        }
+        .plc{
+            border-width: 3px;
+            background-color:rgb(53, 141, 182);
+            text-align: left;
+            
+        }
+    </style>
+</head>
+<title>Tables</title>
+<body>
+<h1><u>ALL SQL TABLE TOPICS</h1></u>
+<big><h2>1. Create Table Command</h2>
+
+The CREATE TABLE statement is used to create a new table in a database.
+
+<b><h2>Syntax</b></h2>
+
+<pre>CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);</pre>
+The column parameters specify the names of the columns of the table.<br>
+
+The datatype parameter specifies the type of data the column can hold (e.g. varchar, integer, date, etc.).
+
+<h2>Example:</h2>
+<pre>
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+</pre>
+
+<h2>2. Creating a Table with data from another Table</h2>
+
+<p>If you are using MySQL, you may want to use the CREATE TABLE ... AS
+SELECT syntax to create a table defined by the columns and data types of another result set:
+</p>
+
+<b><h2>Syntax</b></h2>
+<pre>
+CREATE TABLE new_table AS
+SELECT * 
+FROM   old_table;</pre>
+<h2><b>Example:</b></h2>
+<pre>
+CREATE TABLE old_table (id int, value int);
+
+INSERT INTO old_table VALUES (1, 100), (2, 200), (3, 300), (4, 400);
+
+CREATE TABLE new_table AS
+SELECT * 
+FROM   old_table;
+
+
+SELECT * FROM new_table;
++------+-------+
+| id   | value |
++------+-------+
+|    1 |   100 |
+|    2 |   200 |
+|    3 |   300 |
+|    4 |   400 |
++------+-------+
+4 rows in set (0.00 sec)
+
+
+DESCRIBE new_table;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| id    | int(11) | YES  |     | NULL    |       |
+| value | int(11) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.03 sec)
+</pre>
+<h2>3. Inserting Values into a Table</h2>
+
+The INSERT INTO statement is used to insert new records in a table.
+<br>
+<b><h2>Syntax</b></h2>
+<pre>
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+</pre>
+<h2>Example:</h2>
+<pre>
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+</pre>
+
+<h2>4. Updating Columns of a Table</h2>
+
+The UPDATE statement is used to modify the existing records in a table.
+<b><h2>Syntax</b></h2>
+<pre>
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+</pre>
+<h2>Example:</h2>
+<pre>
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+</pre>
+
+<h2>5. Deleting Rows from a Table</h2>
+The DELETE statement is used to delete existing records in a table.
+<b><h2>Syntax</b></h2>
+<pre>
+DELETE FROM table_name WHERE condition;
+</pre>
+<h2>Example:</h2>
+<pre>
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+</pre>
+
+<h2>6. Dropping a column</h2>
+The DROP COLUMN command is used to delete a column in an existing table.
+<h2>Example:</h2>
+<pre>
+ALTER TABLE Customers
+DROP COLUMN ContactName;
+</pre>
+<h2>7. Dropping a Table</h2>
+The DROP TABLE command deletes a table in the database.
+<h2>Example:</h2>
+<pre>
+DROP TABLE Shippers;
+</pre>
+<h2>8. Truncate Table Command</h2>
+The TRUNCATE TABLE command deletes the data inside a table, but not the table itself.
+<h2>Example:</h2>
+<pre>
+TRUNCATE TABLE Categories;
+</pre>
+<h2>9. RENAME Table Command</h2>
+The RENAME TABLE statement is used to change the table name. 
+<h2>Example:</h2>
+<pre>
+RENAME EMPLOYEE1 TO EMPLOYEE2;
+ 
+Or
+ 
+ALTER EMPLOYEE1 RENAME TO EMPLOYEE2;
+</pre>
+</big>
+</body>
+</html>

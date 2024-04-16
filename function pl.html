@@ -1,0 +1,158 @@
+<html>
+<head>
+
+ <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: ; 
+        }
+
+        .sections {
+            display: flex; 
+            flex-basis: 500px;
+        }
+		
+		body{
+	min-height:50vh;
+	min-width:100vh;
+	background:url("https://wallpapercave.com/wp/wp12455606.jpg") no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+
+        section {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #section1 {
+            /* flex-grow: ; */
+            background-color: #4d93a8;
+        }
+
+        #iframe-container {
+            width: 30%; 
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        iframe {
+            width: 100%; 
+            height: 100%; 
+        }
+
+        #section2 {
+            text-align: center;
+            font-size: 21px;
+            width: 10%;
+            border: none;
+            background-color:#4d93a8;
+            margin: 0;
+            float: left;
+            padding: 0%;
+            padding-top: 30px;
+        }
+        #section3 {
+            display: flex;
+            flex-basis: 700px;
+            flex-grow: 1; 
+            border: none; 
+            margin: 0;}
+        .main_hed{
+            background-color: #4d93a8;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .popup-list {
+          
+            position: relative;
+            display: inline-block;
+            background-color: #4d93a8;
+            padding-bottom: 5px;
+        }
+
+        .popup-list-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .popup-list-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup-list:hover .popup-list-content {
+            display: block;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline solid;
+            font-size: 40px;
+            background-color: #4d93a8;
+            color: #f9f9f9;
+        }
+        .plc{
+            border-width: 3px;
+            background-color:rgb(53, 141, 182);
+            text-align: left;
+            
+        }
+    </style>
+</head>
+<title>FUNCTIONS</title>
+<body>
+<big>
+<h1><u>FUNCTIONS</h1></u>
+<p>
+The PL/SQL Function is very similar to PL/SQL Procedure. The main difference between procedure and a function is, a function must always return a value, and on the other hand a procedure may or may not return a value. Except this, all the other things of PL/SQL procedure are true for PL/SQL function too.
+</p>
+<h2>Syntax to create a function:</h2>
+<pre>
+CREATE [OR REPLACE] FUNCTION function_name [parameters]
+[(parameter_name [IN | OUT | IN OUT] type [, ...])]
+RETURN return_datatype
+{IS | AS}
+BEGIN
+(function_body)
+</pre>
+<h2>Example</h2>
+<pre>
+ DECLARE  
+   a number;  
+   b number;  
+   c number;  
+FUNCTION findMax(x IN number, y IN number)   
+RETURN number  
+IS  
+    z number;  
+BEGIN  
+   IF x > y THEN  
+      z:= x;  
+   ELSE  
+      Z:= y;  
+   END IF;  
+  
+   RETURN z;  
+END;   
+BEGIN  
+   a:= 23;  
+   b:= 45;  
+  
+   c := findMax(a, b);  
+   dbms_output.put_line(' Maximum of (23,45): ' || c);  
+END;  
+/  
+</pre>
+</big>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<html>
+<head>
+<style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: ; 
+        }
+
+        .sections {
+            display: flex; 
+            flex-basis: 500px;
+        }
+		
+		body{
+	min-height:50vh;
+	min-width:100vh;
+	background:url("https://wallpapercave.com/wp/wp11119704.jpg") no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+
+        section {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #section1 {
+            /* flex-grow: ; */
+            background-color: #4d93a8;
+        }
+
+        #iframe-container {
+            width: 30%; 
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        iframe {
+            width: 100%; 
+            height: 100%; 
+        }
+
+        #section2 {
+            text-align: center;
+            font-size: 21px;
+            width: 10%;
+            border: none;
+            background-color:#4d93a8;
+            margin: 0;
+            float: left;
+            padding: 0%;
+            padding-top: 30px;
+        }
+        #section3 {
+            display: flex;
+            flex-basis: 700px;
+            flex-grow: 1; 
+            border: none; 
+            margin: 0;}
+        .main_hed{
+            background-color: #4d93a8;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .popup-list {
+          
+            position: relative;
+            display: inline-block;
+            background-color: #4d93a8;
+            padding-bottom: 5px;
+        }
+
+        .popup-list-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .popup-list-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup-list:hover .popup-list-content {
+            display: block;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline solid;
+            font-size: 40px;
+            background-color: #4d93a8;
+            color: #f9f9f9;
+        }
+        .plc{
+            border-width: 3px;
+            background-color:rgb(53, 141, 182);
+            text-align: left;
+            
+        }
+    </style>
+</head>
+
+<body>
+<big><u><h1>Data Types</h1></u>
+
+The data type of a column defines what value the column can hold: integer, character, money, date and time, binary, and so on.
+
+<br><h2><u>SQL Data Types</h2></u>
+Each column in a database table is required to have a name and a data type.
+
+An SQL developer must decide what type of data that will be stored inside each column when creating a table. The data type is a guideline for SQL to understand what type of data is expected inside of each column, and it also identifies how SQL will interact with the stored data.<br>
+
+<u><h2>MySQL Data Types (Version 8.0)</h2><br></u>
+In MySQL there are three main data types: string, numeric, and date and time.<br>
+
+<u><h3>String Data Types</h3></u>
+
+<pre><big>
+<b><u>Data type					Description</b></u>
+CHAR(size)			A FIXED length string (can contain letters, numbers, and special characters).
+VARCHAR(size)			A VARIABLE length string (can contain letters, numbers, and special characters).
+BINARY(size)			Equal to CHAR(), but stores binary byte strings. The size parameter specifies the column length in bytes.
+VARBINARY(size)			Equal to VARCHAR(),but stores binary byte strings.The size parameter specifies the maximum column length in bytes.
+TINYBLOB			For BLOBs (Binary Large Objects). Max length: 255 bytes
+TINYTEXT			Holds a string with a maximum length of 255 characters
+TEXT(size)			Holds a string with a maximum length of 65,535 bytes
+BLOB(size)			For BLOBs (Binary Large Objects). Holds up to 65,535 bytes of data
+MEDIUMTEXT			Holds a string with a maximum length of 16,777,215 characters
+MEDIUMBLOB			For BLOBs (Binary Large Objects). Holds up to 16,777,215 bytes of data
+LONGTEXT	                Holds a string with a maximum length of 4,294,967,295 characters
+LONGBLOB	                For BLOBs (Binary Large Objects). Holds up to 4,294,967,295 bytes of data
+ENUM(val1, val2, val3, ...)	A string object that can have only one value, chosen from a list of possible values.
+SET(val1, val2, val3, ...)	A string object that can have 0 or more values, chosen from a list of possible values.
+</pre></big>
+
+<u><h3>Numeric Data Types</h3></u>
+
+<pre><big>
+<b><u>Data type			Description</b></u>
+BIT(size)			A bit-value type. The number of bits per value is specified in size.
+TINYINT(size)			A very small integer. Signed range is from -128 to 127. Unsigned range is from 0 to 255.
+BOOL				Zero is considered as false, nonzero values are considered as true.
+BOOLEAN				Equal to BOOL
+SMALLINT(size)			A small integer. Signed range is from -32768 to 32767. Unsigned range is from 0 to 65535.
+MEDIUMINT(size)			A medium integer. Signed range is from -8388608 to 8388607. Unsigned range is from 0 to 16777215.
+INT(size)			A medium integer. Signed range is from -2147483648 to 2147483647. Unsigned range is from 0 to 4294967295.
+INTEGER(size)			Equal to INT(size)
+BIGINT(size)			A large integer.
+FLOAT(size, d)			A floating point number. The total number of digits is specified in size.
+FLOAT(p)				MySQL uses the p value to determine whether to use FLOAT or DOUBLE for the resulting data type.
+DOUBLE(size, d)			A normal-size floating point number.
+DOUBLE PRECISION(size, d)	 
+DECIMAL(size, d)		An exact fixed-point number.
+DEC(size, d)			Equal to DECIMAL(size,d)
+</pre></big>
+
+<u><h3>Date and Time Data Types</h3></u>
+<pre><big>
+<b><u>Data type			Description</b></u>
+DATE				A date. Format: YYYY-MM-DD. The supported range is from '1000-01-01' to '9999-12-31'
+DATETIME(fsp)			A date and time combination. Format: YYYY-MM-DD hh:mm:ss.
+TIMESTAMP(fsp)			A timestamp.TIMESTAMP values are stored as the number of seconds since the Unix epoch('1970-01-01 00:00:00' UTC).
+TIME(fsp)			A time. Format: hh:mm:ss. The supported range is from '-838:59:59' to '838:59:59'
+YEAR				A year in four-digit format. Values allowed in four-digit format: 1901 to 2155, and 0000.
+
+</pre></big>
+</big>
+</body>
+</html>

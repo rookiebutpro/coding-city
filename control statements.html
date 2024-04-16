@@ -1,0 +1,247 @@
+<html>
+<head>
+
+ <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: ; 
+        }
+
+        .sections {
+            display: flex; 
+            flex-basis: 500px;
+        }
+		
+		body{
+	min-height:50vh;
+	min-width:100vh;
+	background:url("https://wallpapercave.com/wp/wp12455606.jpg") no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+
+        section {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #section1 {
+            /* flex-grow: ; */
+            background-color: #4d93a8;
+        }
+
+        #iframe-container {
+            width: 30%; 
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        iframe {
+            width: 100%; 
+            height: 100%; 
+        }
+
+        #section2 {
+            text-align: center;
+            font-size: 21px;
+            width: 10%;
+            border: none;
+            background-color:#4d93a8;
+            margin: 0;
+            float: left;
+            padding: 0%;
+            padding-top: 30px;
+        }
+        #section3 {
+            display: flex;
+            flex-basis: 700px;
+            flex-grow: 1; 
+            border: none; 
+            margin: 0;}
+        .main_hed{
+            background-color: #4d93a8;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .popup-list {
+          
+            position: relative;
+            display: inline-block;
+            background-color: #4d93a8;
+            padding-bottom: 5px;
+        }
+
+        .popup-list-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .popup-list-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup-list:hover .popup-list-content {
+            display: block;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline solid;
+            font-size: 40px;
+            background-color: #4d93a8;
+            color: #f9f9f9;
+        }
+        .plc{
+            border-width: 3px;
+            background-color:rgb(53, 141, 182);
+            text-align: left;
+            
+        }
+    </style>
+</head>
+<title>Control Statements</title>
+<body>
+<big>
+<h1><u>Control Statements</h1></u>
+<h2>PL/SQL If</h2>
+<p>
+PL/SQL supports the programming language features like conditional statements and iterative statements.
+</p>
+
+Syntax: (IF-THEN statement):
+<pre>
+IF condition
+THEN
+Statement: {It is executed when condition is true}
+END IF;
+This syntax is used when you want to execute statements only when condition is TRUE.
+</pre>
+Syntax: (IF-THEN-ELSE statement):
+<pre>
+IF condition
+THEN
+{...statements to execute when condition is TRUE...}
+ELSE
+{...statements to execute when condition is FALSE...}
+END IF;
+This syntax is used when you want to execute one set of statements when condition is TRUE or a different set of statements when condition is FALSE.
+</pre>
+<h2>Example</h2>
+<pre>
+IF (a<=20) THEN
+c:=c+1;
+END IF;
+</pre>
+<h2>PL/SQL Loop</h2>
+<p>
+The PL/SQL loops are used to repeat the execution of one or more statements for specified number of times. These are also known as iterative control statements. 
+</p>
+Syntax for a basic loop:<br>
+LOOP
+Sequence of statements;<br>
+END LOOP;
+<h2>PL/SQL Exit Loop</h2>
+<p>
+PL/SQL exit loop is used when a set of statements is to be executed at least once before the termination of the loop. There must be an EXIT condition specified in the loop, otherwise the loop will get into an infinite number of iterations. After the occurrence of EXIT condition, the process exits the loop.
+</p>
+Syntax of exit loop:<br>
+
+<pre>
+LOOP
+statements;
+EXIT;
+{or EXIT WHEN condition;}
+END LOOP;
+</pre>
+<h2>Example</h2>
+<pre>
+DECLARE  
+i NUMBER := 1;  
+BEGIN  
+LOOP  
+EXIT WHEN i>10;  
+DBMS_OUTPUT.PUT_LINE(i);  
+i := i+1;  
+END LOOP;  
+END;  
+</pre>
+<h2>PL/SQL While Loop</h2>
+<p>
+PL/SQL while loop is used when a set of statements has to be executed as long as a condition is true, the While loop is used. The condition is decided at the beginning of each iteration and continues until the condition becomes false.
+</p>
+Syntax of while loop:<br>
+<pre>
+WHILE (condition)
+LOOP statements;
+END LOOP;
+</pre>
+<h2>Example</h2>
+<pre>
+DECLARE  
+i INTEGER := 1;  
+BEGIN  
+WHILE i <= 10 LOOP  
+DBMS_OUTPUT.PUT_LINE(i);  
+i := i+1;  
+END LOOP;  
+END;
+</pre>
+<h2>PL/SQL For Loop</h2>
+<p>
+PL/SQL for loop is used when when you want to execute a set of statements for a predetermined number of times. The loop is iterated between the start and end integer values. The counter is always incremented by 1 and once the counter reaches the value of end integer, the loop ends.
+</p>
+Syntax of for loop:<br>
+<pre>
+FOR counter IN initial_value .. final_value LOOP
+LOOP statements;
+END LOOP;
+<br>
+initial_value : Start integer value
+final_value : End integer value
+</pre>
+<h2>Example</h2>
+<pre>
+BEGIN  
+FOR k IN 1..10 LOOP  
+-- note that k was not declared  
+DBMS_OUTPUT.PUT_LINE(k);  
+END LOOP;  
+END;   
+</pre>
+<h2>PL/SQL GOTO Statement</h2>
+<p>
+In PL/SQL, GOTO statement makes you able to get an unconditional jump from the GOTO to a specific executable statement label in the same subprogram of the PL/SQL block. Here the label declaration which contains the label_name encapsulated within the '<< >>' symbol and must be followed by at least one statement to execute.
+</p>
+Syntax:
+GOTO label_name;<br>
+<h2>Example</h2>
+<pre>
+DECLARE  
+   a number(2) := 30;  
+BEGIN  
+   <<loopstart>>  
+   -- while loop execution   
+   WHILE a < 50 LOOP  
+      dbms_output.put_line ('value of a: ' || a);  
+      a := a + 1;  
+      IF a = 35 THEN  
+         a := a + 1;  
+         GOTO loopstart;  
+      END IF;  
+   END LOOP;  
+END;  
+/  
+</pre>
+</big>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<html>
+<head>
+<style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: ; 
+        }
+
+        .sections {
+            display: flex; 
+            flex-basis: 500px;
+        }
+		
+		body{
+	min-height:50vh;
+	min-width:100vh;
+	background:url("https://wallpapercave.com/wp/wp11119704.jpg") no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+
+        section {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #section1 {
+            /* flex-grow: ; */
+            background-color: #4d93a8;
+        }
+
+        #iframe-container {
+            width: 30%; 
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        iframe {
+            width: 100%; 
+            height: 100%; 
+        }
+
+        #section2 {
+            text-align: center;
+            font-size: 21px;
+            width: 10%;
+            border: none;
+            background-color:#4d93a8;
+            margin: 0;
+            float: left;
+            padding: 0%;
+            padding-top: 30px;
+        }
+        #section3 {
+            display: flex;
+            flex-basis: 700px;
+            flex-grow: 1; 
+            border: none; 
+            margin: 0;}
+        .main_hed{
+            background-color: #4d93a8;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .popup-list {
+          
+            position: relative;
+            display: inline-block;
+            background-color: #4d93a8;
+            padding-bottom: 5px;
+        }
+
+        .popup-list-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .popup-list-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup-list:hover .popup-list-content {
+            display: block;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline solid;
+            font-size: 40px;
+            background-color: #4d93a8;
+            color: #f9f9f9;
+        }
+        .plc{
+            border-width: 3px;
+            background-color:rgb(53, 141, 182);
+            text-align: left;
+            
+        }
+    </style>
+</head>
+<title>DDL,DML,DCL&TCL</title>
+<body>
+<u><big><h1>DDL,DML,DCL&TCL</h1></u>
+<h2>1. DDL (Data Definition Language)</h2>
+<p>
+DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema. It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database. DDL is a set of SQL commands used to create, modify, and delete database structures but not data. These commands are normally not used by a general user, who should be accessing the database via an application.
+</p>
+<h3>List of DDL commands: </h3>
+<pre>
+
+*CREATE: This command is used to create the database or its objects (like table, index, function, views, store procedure, and triggers).
+<br>*DROP: This command is used to delete objects from the database.
+<br>*ALTER: This is used to alter the structure of the database.
+<br>*TRUNCATE: This is used to remove all records from a table, including all spaces allocated for the records are removed.
+<br>*RENAME: This is used to rename an object existing in the database.
+</pre>
+<a href='tabel.html'><h3>EXAMPLE</h3></a>
+<h2>2. DML(Data Manipulation Language)</h2>
+<p>
+The SQL commands that deal with the manipulation of data present in the database belong to DML or Data Manipulation Language and this includes most of the SQL statements. It is the component of the SQL statement that controls access to data and to the database. Basically, DCL statements are grouped with DML statements.
+</p>
+<h3>List of DML commands: </h3>
+<pre>
+List of DML commands: 
+
+*INSERT: It is used to insert data into a table.
+*UPDATE: It is used to update existing data within a table.
+*DELETE: It is used to delete records from a database table.
+</pre>
+<a href='tabel.html'><h3>EXAMPLE</h3></a>
+<h2>3. DML(Data CONTROL Language)</h2>
+<p>
+DCL includes commands such as GRANT and REVOKE which mainly deal with the rights, permissions, and other controls of the database system. 
+</p>
+<h3>List of DCL commands: </h3>
+<pre>
+<b>*GRANT: This command gives users access privileges to the database.</b>
+<h2>Syntax:</h2>
+GRANT SELECT, UPDATE ON MY_TABLE TO SOME_USER, ANOTHER_USER; <br>
+<b>*REVOKE: This command withdraws the user’s access privileges given by using the GRANT command.</b>
+<h2>Syntax:</h2>
+REVOKE SELECT, UPDATE ON MY_TABLE FROM USER1, USER2;  
+</pre>
+<h2>4. TCL(Transaction Control Language)</h2>
+<p>
+Transactions group a set of tasks into a single execution unit. Each transaction begins with a specific task and ends when all the tasks in the group are successfully completed. If any of the tasks fail, the transaction fails. Therefore, a transaction has only two results: success or failure. You can explore more about transactions here.
+</p>
+<h3>List of TCL commands:</h3>
+<pre>
+<b>*COMMIT: Commits a Transaction.</b>
+<h2>Syntax:</h2>
+COMMIT;   <br>
+<b>*ROLLBACK: Rollbacks a transaction in case of any error occurs.</b>
+<h2>Syntax:</h2>
+ROLLBACK;<br>
+<b>*SAVEPOINT: Sets a save point within a transaction.</b>
+<h2>Syntax:</h2>
+SAVEPOINT SAVEPOINT_NAME;
+</big>
+</body>
+</html>

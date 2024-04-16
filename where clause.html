@@ -1,0 +1,183 @@
+<html>
+<head>
+<style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: ; 
+        }
+
+        .sections {
+            display: flex; 
+            flex-basis: 500px;
+        }
+		
+		body{
+	min-height:50vh;
+	min-width:100vh;
+	background:url("https://wallpapercave.com/wp/wp11119704.jpg") no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+
+        section {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #section1 {
+            /* flex-grow: ; */
+            background-color: #4d93a8;
+        }
+
+        #iframe-container {
+            width: 30%; 
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        iframe {
+            width: 100%; 
+            height: 100%; 
+        }
+
+        #section2 {
+            text-align: center;
+            font-size: 21px;
+            width: 10%;
+            border: none;
+            background-color:#4d93a8;
+            margin: 0;
+            float: left;
+            padding: 0%;
+            padding-top: 30px;
+        }
+        #section3 {
+            display: flex;
+            flex-basis: 700px;
+            flex-grow: 1; 
+            border: none; 
+            margin: 0;}
+        .main_hed{
+            background-color: #4d93a8;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .popup-list {
+          
+            position: relative;
+            display: inline-block;
+            background-color: #4d93a8;
+            padding-bottom: 5px;
+        }
+
+        .popup-list-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .popup-list-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup-list:hover .popup-list-content {
+            display: block;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline solid;
+            font-size: 40px;
+            background-color: #4d93a8;
+            color: #f9f9f9;
+        }
+        .plc{
+            border-width: 3px;
+            background-color:rgb(53, 141, 182);
+            text-align: left;
+            
+        }
+    </style>
+</head>
+<title>Conditional Retrieval of Rows</title>
+<body>
+<big><u><h1>Where Clause</h1></u>
+<p>Conditional retrieval of rows from a database table is done by specifying
+the condition in the WHERE clause of the SELECT statement.</p>
+
+<h2>Syntax</h2>
+<pre>
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+</pre>
+<h2>Example</h2>
+<pre>
+SELECT * FROM Customers
+WHERE Country='Mexico';
+</pre>
+
+<u><h1>ORDER by Clause</h1></u>
+<p>The ORDER BY keyword is used to sort the result-set in ascending or descending order.</p>
+<h2>Syntax</h2>
+<pre>
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+</pre>
+
+<h2>Example</h2>
+<pre>
+SELECT * FROM Products
+ORDER BY Price;
+
+SELECT * FROM Products
+ORDER BY Price DESC;
+</pre>
+<u><h1>GROUP by Clause</h1></u>
+<p>The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".</p>
+<p>The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.</p>
+<h2>Syntax</h2>
+<pre>
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+</pre>
+<h2>Example</h2>
+<pre>
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+</pre>
+<u><h1>Having Clause</h1></u>
+<p>The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.</p>
+<h2>Syntax</h2>
+<pre>
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+</pre>
+<h2>Example</h2>
+<pre>
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+</pre>
+</big>
+</body>
+</html>
